@@ -19,7 +19,7 @@
     <div class="container mx-auto flex justify-between items-center">
         <h1 class="text-xl font-bold text-gray-800"><a href="/">My Laravel App</a></h1>
         <nav>
-            <a href="{{ route('tasks.index') }}" class="text-blue-600 hover:underline mr-4">Tasks</a>
+            <a href="/tasks" class="text-blue-600 hover:underline mr-4">Tasks</a>
         </nav>
     </div>
 </header>

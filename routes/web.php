@@ -7,6 +7,10 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/tasks', [TaskController::class, 'index'])->name('tasks.index');
+Route::get('/tasks', function (){
+    return view('tasks/index');
+});
 
-Route::post('/tasks', [TaskController::class, 'store'])->name('tasks.store');
+Route::get('/tasks/{id}', function ($id){
+    return view('tasks/show', ['taskId' => $id]);
+});
