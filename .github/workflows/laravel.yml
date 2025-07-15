@@ -45,7 +45,7 @@ jobs:
         run: php artisan migrate --force
 
       - name: Run Tests
-        run: php artisan test --verbose
+        run: php artisan test
 
   deploy:
     needs: laravel-tests
