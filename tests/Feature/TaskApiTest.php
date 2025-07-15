@@ -3,6 +3,7 @@
 namespace Tests\Feature;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
 use App\Models\Task;
 
@@ -10,6 +11,7 @@ class TaskApiTest extends TestCase
 {
     use RefreshDatabase;
 
+    #[Test]
     public function test_tasks_index_returns_tasks_list()
     {
         Task::query()->create([
@@ -33,6 +35,7 @@ class TaskApiTest extends TestCase
             ]);
     }
 
+    #[Test]
     public function test_can_create_task_with_valid_data()
     {
         $taskData = [
@@ -54,6 +57,7 @@ class TaskApiTest extends TestCase
         ]);
     }
 
+    #[Test]
     public function test_validation_errors_returned_for_invalid_data()
     {
         $taskData = [
@@ -68,6 +72,7 @@ class TaskApiTest extends TestCase
             ->assertJsonValidationErrors(['name']);
     }
 
+    #[Test]
     public function test_can_update_task()
     {
         $task = Task::query()->create([
@@ -97,6 +102,7 @@ class TaskApiTest extends TestCase
         ]);
     }
 
+    #[Test]
     public function test_can_delete_task()
     {
         $task = Task::query()->create([
